@@ -23,7 +23,7 @@ $ git clone https://github.com/n1ghts4kura/rmyc-robot-framework.git
 ### 3. 访问官方文档了解 API 详情。
 [\[RoboMaster Young Champion Series 开发者文档\]](https://robomaster-dev.readthedocs.io/zh-cn/latest/python/apis.html)
 
-### 4. 使用 `complie.py` *检查* 代码是否合规。
+### 4(Optional). 使用 `complie.py` *检查* 代码是否合规。
 
 ```shell
 $ python complie.py
