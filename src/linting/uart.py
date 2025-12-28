@@ -2,6 +2,7 @@
 # @doc docs/python/uart.rst
 # @export_name serial_ctrl
 # 本文件由自动脚本生成，用于提供 linting/补全，真实逻辑请在原生环境实现
+from typing import Optional
 
 def serial_config(baud_rate, data_bit, odd_even_crc, stop_bit) -> None:
     """设置串口的波特率、数据位、校验位以及停止位属性
@@ -99,11 +100,11 @@ def write_value(key, value) -> None:
     """
     return None
 
-def read_line(timeout) -> str:
+def read_line(timeout=None) -> str:
     """从串口中读取以 ``'\n'`` 结尾的字符串
 
     Args:
-        timeout (float): 可选，超时时间，单位为秒，默认为永久阻塞
+        timeout (Optional[float]): 可选，超时时间，单位为秒，默认为永久阻塞
 
     Returns:
         str: 通过串口读取到的字符串
@@ -114,11 +115,11 @@ def read_line(timeout) -> str:
     """
     return ""
 
-def read_string(timeout) -> str:
+def read_string(timeout=None) -> str:
     """从串口中读取字符串（字符串可以不以 ``'\n'`` 结尾）
 
     Args:
-        timeout (float): 可选，超时时间，单位为秒，默认为永久阻塞
+        timeout (Optional[float]): 可选，超时时间，单位为秒，默认为永久阻塞
 
     Returns:
         str: 通过串口读取到的字符串
@@ -129,12 +130,12 @@ def read_string(timeout) -> str:
     """
     return ""
 
-def read_until(stop_sig, timeout) -> str:
+def read_until(stop_sig, timeout=None) -> str:
     """从串口中读取字符串，直到匹配到指定的结束字符 ``'stop_sig'``
 
     Args:
         stop_sig (Any): 指定的结束字符，参数类型为字符，范围为[ ``'\n'`` | ``'$'`` | ``'#'`` | ``'.'`` | ``':'`` | ``';'`` ]
-        timeout (float): 可选，超时时间，单位为秒，默认为永久阻塞
+        timeout (Optional[float]): 可选，超时时间，单位为秒，默认为永久阻塞
 
     Returns:
         str: 通过串口读取到的匹配字符串

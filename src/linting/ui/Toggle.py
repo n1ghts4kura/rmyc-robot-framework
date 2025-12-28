@@ -3,6 +3,8 @@
 # @export_name toggle_object
 # 本文件由自动脚本生成，用于提供 linting/补全，真实逻辑请在原生环境实现
 
+from typing import Optional
+
 from .Common import Common
 from .utils import text_anchor
 
@@ -16,18 +18,18 @@ class Toggle(Common):
     def set_text(
         self,
         string: str,
-        color: list[int] | None = None,
-        align: int = text_anchor.upper_left,
-        size: int | None = None,
+        color: Optional[list[int]] = None,
+        align: Optional[int] = text_anchor.upper_left,
+        size: Optional[int] = None,
     ) -> None:
         """
         设置开关控件的文字属性
 
         Args:
             string (str): 控件上显示的字符串内容
-            color (list[int] | None): 文字颜色 RGBA 列表，范围为 [0, 255]，可选
-            align (int | None): 文字对齐方式，详细见 :data:`align`
-            size (int | None): 显示文字的字号大小
+            color (Optional[list[int]]): 文字颜色 RGBA 列表，范围为 [0, 255]，可选
+            align (Optional[int]): 文字对齐方式，详细见 :data:`align`
+            size (Optional[int]): 显示文字的字号大小
 
         Returns:
             None: 无

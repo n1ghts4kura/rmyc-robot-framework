@@ -20,7 +20,7 @@ def get_sensor_adapter_adc(board_id, port_num, wait_for_complete) -> int:
     """
     return 0
 
-def get_sensor_adapter_pulse_period(board_id, port_num) -> int:
+def get_sensor_adapter_pulse_period(board_id: int, port_num: int) -> int:
     """获取传感器转接模块相应端口引脚的脉冲持续时间
 
     Args:
@@ -31,18 +31,16 @@ def get_sensor_adapter_pulse_period(board_id, port_num) -> int:
         int: 传感器转接模块相应端口引脚的脉冲持续时间，精确度为 1 ms
 
     Example:
-        >>> ret = sensor_adapter_ctrl.get_sensor_pulse_period(1, 2)
+        >>> ret = sensor_adapter_ctrl.get_sensor_adapter_pulse_period(1, 2)
         # 获取 1 号传感器转接模块 2 号端口引脚脉冲持续时间
     """
     return 0
 
-def cond_wait(board_id, port_num, judge_type) -> None:
+def cond_wait(condition: str) -> None:
     """等待传感器转接模块相应端口引脚脉冲为（高/低/跳变）时，执行下一条指令
 
     Args:
-        board_id (int): 传感器转接模块编号，范围为[1:6]
-        port_num (uint8): 传感器转接模块上的端口号，范围为[1:2]
-        judge_type (Any): 触发条件，可以为 high, low, trigger，分别表示高电平，低电平还是双向跳变
+        condition (str): 事件条件字符串，形如 ``rm_define.cond_sensor_adapter[board_id]_port[port_id]_[judge_type]_event``
 
     Returns:
         None: 无
@@ -53,18 +51,16 @@ def cond_wait(board_id, port_num, judge_type) -> None:
     """
     return None
 
-def check_condition(board_id, port_num, judge_type) -> bool:
+def check_condition(condition: str) -> bool:
     """判断传感器转接模块相应端口引脚脉冲是否为（高/低/跳变）
 
     Args:
-        board_id (int): 传感器转接模块编号，范围为[1:6]
-        port_num (uint8): 传感器转接模块上的端口号，范围为[1:2]
-        judge_type (Any): 触发条件，可以为 high, low, trigger，分别表示高电平，低电平还是双向跳变
+        condition (str): 事件条件字符串，形如 ``rm_define.cond_sensor_adapter[board_id]_port[port_id]_[judge_type]_event``
 
     Returns:
         bool: 是否满足条件，满足条件时返回真，否则返回假。
 
     Example:
-        >>> sensor_adapter_ctrl.check_condition(board_id, port_num, judge_type)
+        >>> sensor_adapter_ctrl.check_condition(rm_define.cond_sensor_adapter1_port2_trigger_event)
     """
     return False

@@ -18,7 +18,7 @@ def get_angle(servo_id) -> int:
     """
     return 0
 
-def set_angle(servo_id, angle, wait_for_complete) -> None:
+def set_angle(servo_id, angle, wait_for_complete=True) -> None:
     """设置舵机旋转角度
 
     Args:
@@ -35,7 +35,7 @@ def set_angle(servo_id, angle, wait_for_complete) -> None:
     """
     return None
 
-def recenter(servo_id, wait_for_complete) -> None:
+def recenter(servo_id, wait_for_complete=True) -> None:
     """设置舵机回中
 
     Args:

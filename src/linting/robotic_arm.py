@@ -3,7 +3,7 @@
 # @export_name robotic_arm_ctrl
 # 本文件由自动脚本生成，用于提供 linting/补全，真实逻辑请在原生环境实现
 
-def move(x, y, wait_for_complete) -> None:
+def move(x, y, wait_for_complete=True) -> None:
     """设置机械臂运动的相对位置
 
     Args:
@@ -20,7 +20,7 @@ def move(x, y, wait_for_complete) -> None:
     """
     return None
 
-def moveto(x, y, wait_for_complete) -> None:
+def moveto(x, y, wait_for_complete=True) -> None:
     """设置机械臂运动到绝对坐标
 
     Args:
@@ -37,26 +37,26 @@ def moveto(x, y, wait_for_complete) -> None:
     """
     return None
 
-def get_position(void) -> int:
+def get_position() -> list[int]:
     """获取机械臂位置
 
     Args:
-        void (Any): 无
+        None: 无
 
     Returns:
-        int: 机械臂的绝对坐标，精确度为 1 mm
+        list[int]: 机械臂的绝对坐标，精确度为 1 mm
 
     Example:
         >>> [x, y] = robotic_arm_ctrl.get_position()
         # 获取机械臂的绝对坐标
     """
-    return 0
+    return [0, 0]
 
-def recenter(void) -> None:
+def recenter() -> None:
     """设置机械臂回中
 
     Args:
-        void (Any): 无
+        None: 无
 
     Returns:
         None: 无

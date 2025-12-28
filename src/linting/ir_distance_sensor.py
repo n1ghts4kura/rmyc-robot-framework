@@ -48,7 +48,7 @@ def get_distance_info(port_id) -> int:
     """
     return 0
 
-def cond_wait(condition) -> None:
+def cond_wait(condition: str) -> None:
     """等待红外深度传感器模块前方障碍物距离满足条件时，执行下一条指令
 
     Args:
@@ -63,7 +63,7 @@ def cond_wait(condition) -> None:
     """
     return None
 
-def check_condition(condition) -> bool:
+def check_condition(condition: str) -> bool:
     """判断红外深度传感器模块前方障碍物距离是否满足条件
 
     Args:
