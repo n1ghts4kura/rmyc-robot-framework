@@ -172,6 +172,3 @@ class Text(Common):
         """
 
         return None
-
-
-text_object = Text()

@@ -13,6 +13,6 @@ from . import servo as servo_ctrl
 from . import uart as serial_ctrl
 from . import vision as vision_ctrl
 from . import gun as gun_ctrl
-from . import rm_define as rm_define
+from . import rm_define
 
 from .ui import *

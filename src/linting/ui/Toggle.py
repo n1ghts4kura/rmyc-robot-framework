@@ -149,6 +149,3 @@ class Toggle(Common):
         """
 
         return None
-
-
-toggle_object = Toggle()
